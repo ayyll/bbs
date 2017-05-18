@@ -4,8 +4,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import javax.print.attribute.standard.Sides;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -41,7 +39,12 @@ public class ArticleController {
 	
 	@Autowired
 	private CommentService commentService;
-	
+
+	@RequestMapping("/test")
+	public String test() {
+		System.out.println("test");
+		return "hello";
+	}
 	/**
 	 * 获取帖子分页数据
 	 * @return
@@ -49,7 +52,7 @@ public class ArticleController {
 	@RequestMapping("/list/{currentPage}")
 	public ModelAndView getArticlePageList(HttpSession session,
 			@PathVariable("currentPage") int currentPage){
-		//System.out.println("hello");
+		System.out.println("hello");
 		ModelAndView mav = new ModelAndView();
 		int pageSize = 10;// 每页记录数
 		mav.addObject("articlePageBean", articleService.getArticlePageList(currentPage,pageSize));

@@ -30,7 +30,13 @@ public class ArticleServiceImpl implements ArticleService {
 	@Override
 	public int addArticle(String title, String content, Timestamp timestamp,
 			Integer uid, String lable) {
-		return articleDao.addArticle(title, content, timestamp, uid, lable);
+//		if(title == null) System.out.println("1");
+//		if(content == null) System.out.println("2");
+//		if(timestamp == null) System.out.println("3");
+//		if(uid == null) System.out.println("4");
+//		if(lable == null) System.out.println("5");
+		articleDao.addArticle(title, content, timestamp, uid, lable);
+		return 0;
 	}
 
 	@Override
@@ -76,6 +82,12 @@ public class ArticleServiceImpl implements ArticleService {
 	public List<Article> searchArticleByLable(String lab) {
 		
 		return articleDao.searchArticleByLable(lab);
+	}
+
+	@Override
+	public int getLastId() {
+		
+		return articleDao.queryLastId();
 	}
 
 

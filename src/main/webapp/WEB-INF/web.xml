@@ -29,7 +29,12 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	
+	<listener>  
+        <!-- 此处为实现监听接口的完整的包名类名  -->  
+  		<listener-class>  
+        	com.ayyll.listener.NFDFlightDataTaskListener
+        </listener-class>  
+	</listener>  
 	<!-- springmvc -->
 	<servlet>
 		<servlet-name>springMVC</servlet-name>

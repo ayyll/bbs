@@ -32,4 +32,6 @@ public interface ArticleDao {
 	public List<Article> searchArticleByPerfect();
 
 	public List<Article> searchArticleByLable(@Param("lab")String lab);
+	
+	public int queryLastId();
 }

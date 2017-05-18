@@ -64,4 +64,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="searchArticleByLable" resultMap="ArticleResult">
 		select * from article where lable=#{lab}
 	</select>
+	
+	<select id="queryLastId" resultType="int">
+		select aid from article order by aid desc limit 1 
+	</select>
 </mapper>

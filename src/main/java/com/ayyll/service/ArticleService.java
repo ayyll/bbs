@@ -78,5 +78,7 @@ public interface ArticleService {
 	 * @return
 	 */
 	public List<Article> searchArticleByLable(String lab);
+	
+	public int getLastId();
 
 }
